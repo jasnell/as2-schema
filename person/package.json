@@ -1,0 +1,32 @@
+{
+  "name": "as-schema-person",
+  "version": "0.0.1",
+  "description": "schema.org/Person for Activity Streams 2.0",
+  "main": "./lib/models.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jasnell/as-schema"
+  },
+  "keywords": [
+    "schema.org",
+    "activitystreams"
+  ],
+  "author": "James M Snell <jasnell@gmail.com>",
+  "license": "Apache v2.0",
+  "bugs": {
+    "url": "https://github.com/jasnell/as-schema/issues"
+  },
+  "homepage": "https://github.com/jasnell/as-schema",
+  "dependencies": {
+    "activitystrea.ms": "^0.6.5",
+    "as-schema-thing": "^0.0.1",
+    "linkeddata-vocabs": "^0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "through2": "^2.0.0"
+  }
+}
