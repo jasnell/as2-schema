@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/jasnell/as-schema",
   "dependencies": {
-    "activitystrea.ms": "^0.6.5",
-    "as-schema-thing": "^0.0.1",
-    "linkeddata-vocabs": "^0.6.0"
+    "activitystrea.ms": "^0.8.0",
+    "as-schema-thing": "^0.0.2",
+    "linkeddata-vocabs": "^0.7.0"
   },
   "devDependencies": {
     "mocha": "^2.2.5",

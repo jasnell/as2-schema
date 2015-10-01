@@ -1,12 +1,12 @@
 'use strict';
 
-var Thing = require('./_thing');
-var schema = require('./schema');
-var vocabs = require('linkeddata-vocabs');
-var as = vocabs.as;
-var rdfs = vocabs.rdfs;
-var owl = vocabs.owl;
-var rdf = vocabs.rdf;
+const Thing = require('./_thing');
+const schema = require('./schema');
+const vocabs = require('linkeddata-vocabs');
+const as = vocabs.as;
+const rdfs = vocabs.rdfs;
+const owl = vocabs.owl;
+const rdf = vocabs.rdf;
 
 exports.Thing = Thing;
 
@@ -23,7 +23,7 @@ function thing_recognizer(reasoner, type) {
 }
 
 exports.thing = function(types) {
-  return Thing.Builder(gettypes(types,schema.Thing));
+  return new Thing.Builder(gettypes(types,schema.Thing));
 };
 
 exports.vocab = schema;

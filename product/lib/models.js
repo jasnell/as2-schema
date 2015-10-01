@@ -25,22 +25,23 @@ function gettypes(types, type) {
 }
 
 exports.product = function(types) {
-  return Product.Builder(gettypes(types,product.Product));
+  return new Product.Builder(gettypes(types,product.Product));
 };
 exports.individualProduct = function(types) {
-  return IndividualProduct.Builder(gettypes(types,product.IndividualProduct));
+  return new IndividualProduct.Builder(
+    gettypes(types,product.IndividualProduct));
 };
 exports.productModel = function(types) {
-  return ProductModel.Builder(gettypes(types,product.ProductModel));
+  return new ProductModel.Builder(gettypes(types,product.ProductModel));
 };
 exports.someProducts = function(types) {
-  return SomeProducts.Builder(gettypes(types,product.SomeProducts));
+  return new SomeProducts.Builder(gettypes(types,product.SomeProducts));
 };
 exports.vehicle = function(types) {
-  return Vehicle.Builder(gettypes(types,product.Vehicle));
+  return new Vehicle.Builder(gettypes(types,product.Vehicle));
 };
 exports.car = function(types) {
-  return Vehicle.Builder(gettypes(types,product.Car));
+  return new Vehicle.Builder(gettypes(types,product.Car));
 };
 
 function product_recognizer(reasoner, type) {

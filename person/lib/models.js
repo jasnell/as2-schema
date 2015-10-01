@@ -18,7 +18,7 @@ function gettypes(types, type) {
 }
 
 exports.person = function(types) {
-  return Person.Builder(gettypes(types,person.Person));
+  return new Person.Builder(gettypes(types,person.Person));
 };
 
 function person_recognizer(reasoner, type) {

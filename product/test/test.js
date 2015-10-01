@@ -14,7 +14,7 @@ describe('It should work', function() {
 
   it('should create a schema:Product', function(done) {
     var product = st.product().name('test').brand('test').get();
-    assert.equal(product.name, 'test');
+    assert.equal(product.name.first, 'test');
     done();
   });
 
@@ -26,7 +26,7 @@ describe('It should work', function() {
          })
          .pipe(through.obj(function(chunk,encoding,callback) {
             assert(chunk instanceof st.Product);
-            assert.equal(chunk.name, 'test');
+            assert.equal(chunk.name.first, 'test');
             callback();
          }));
 

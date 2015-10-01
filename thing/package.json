@@ -1,6 +1,6 @@
 {
   "name": "as-schema-thing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "schema.org/Thing for Activity Streams 2.0",
   "main": "./lib/models.js",
   "scripts": {
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/jasnell/as-schema",
   "dependencies": {
-    "activitystrea.ms": "^0.6.5",
-    "linkeddata-vocabs": "^0.6.0"
+    "activitystrea.ms": "^0.8.0",
+    "linkeddata-vocabs": "^0.7.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
+    "mocha": "^2.3.3",
     "through2": "^2.0.0"
   }
 }

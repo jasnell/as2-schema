@@ -1,296 +1,281 @@
 'use strict';
 
-var util     = require('util');
 var product   = require('./product');
 var Thing = require('as-schema-thing').Thing;
 
-function Product(expanded, builder) {
-  if (!(this instanceof Product))
-    return new Product(expanded, builder);
-  Thing.call(this, expanded, builder || Product.Builder);
-}
-util.inherits(Product,Thing);
+class Product extends Thing {
+  constructor(expanded, builder) {
+    super(expanded, builder || Product.Builder);
+  }
 
-Product.Builder = function(types, base) {
-  if (!(this instanceof Product.Builder))
-    return new Product.Builder(types,base);
-  types = (types || []).concat([product.Product]);
-  Thing.Builder.call(this, types, base || new Product({}));
-};
-util.inherits(Product.Builder,Thing.Builder);
-
-module.exports = Product;
-
-function defineProperty(key, getter, setter) {
-  Object.defineProperty(Product.prototype, key, {
-    enumerable: true,
-    configurable: false,
-    get: getter
-  });
-  Object.defineProperty(Product.Builder.prototype, key, {
-    enumerable: true,
-    configurable: false,
-    value: setter
-  });
-}
-
-defineProperty('additionalProperty',
-  function() {
+  get additionalProperty() {
     return this.get(product.additionalProperty);
-  },
-  function(val) {
+  }
+
+  get aggregateRating() {
+    return this.get(product.aggregateRating);
+  }
+
+  get audience() {
+    return this.get(product.audience);
+  }
+
+  get award() {
+    return this.get(product.award);
+  }
+
+  get brand() {
+    return this.get(product.brand);
+  }
+
+  get category() {
+    return this.get(product.category);
+  }
+
+  get color() {
+    return this.get(product.color);
+  }
+
+  get depth() {
+    return this.get(product.depth);
+  }
+
+  get gtin12() {
+    return this.get(product.gtin12);
+  }
+
+  get gtin13() {
+    return this.get(product.gtin13);
+  }
+
+  get gtin14() {
+    return this.get(product.gtin14);
+  }
+
+  get gtin8() {
+    return this.get(product.gtin8);
+  }
+
+  get isAccessoryOrSpacePartFor() {
+    return this.get(product.isAccessoryOrSpacePartFor);
+  }
+
+  get isConsumableFor() {
+    return this.get(product.isConsumableFor);
+  }
+
+  get isRelatedTo() {
+    return this.get(product.isRelatedTo);
+  }
+
+  get isSimilarTo() {
+    return this.get(product.isSimilarTo);
+  }
+
+  get itemCondition() {
+    return this.get(product.itemCondition);
+  }
+
+  get logo() {
+    return this.get(product.logo);
+  }
+
+  get manufacturer() {
+    return this.get(product.manufacturer);
+  }
+
+  get model() {
+    return this.get(product.model);
+  }
+
+  get mpn() {
+    return this.get(product.mpn);
+  }
+
+  get offers() {
+    return this.get(product.offers);
+  }
+
+  get productID() {
+    return this.get(product.productID);
+  }
+
+  get productionDate() {
+    return this.get(product.productionDate);
+  }
+
+  get purchaseDate() {
+    return this.get(product.purchaseDate);
+  }
+
+  get releaseDate() {
+    return this.get(product.releaseDate);
+  }
+
+  get review() {
+    return this.get(product.review);
+  }
+
+  get sku() {
+    return this.get(product.sku);
+  }
+
+  get weight() {
+    return this.get(product.weight);
+  }
+}
+
+class ProductBuilder extends Thing.Builder {
+  constructor(types, base) {
+    types = (types || []).concat([product.Product]);
+    super(types, base || new Product({}));
+  }
+
+  additionalProperty(val) {
     this.set(product.additionalProperty, val);
     return this;
-  });
+  }
 
-defineProperty('aggregateRating',
-  function() {
-    return this.get(product.aggregateRating);
-  },
-  function(val) {
+  aggregateRating(val) {
     this.set(product.aggregateRating, val);
     return this;
-  });
+  }
 
-defineProperty('audience',
-  function() {
-    return this.get(product.audience);
-  },
-  function(val) {
+  audience(val) {
     this.set(product.audience, val);
     return this;
-  });
+  }
 
-defineProperty('award',
-  function() {
-    return this.get(product.award);
-  },
-  function(val) {
+  award(val) {
     this.set(product.award, val);
     return this;
-  });
+  }
 
-defineProperty('brand',
-  function() {
-    return this.get(product.brand);
-  },
-  function(val) {
+  brand(val) {
     this.set(product.brand, val);
     return this;
-  });
+  }
 
-defineProperty('category',
-  function() {
-    return this.get(product.category);
-  },
-  function(val) {
+  category(val) {
     this.set(product.category, val);
     return this;
-  });
+  }
 
-defineProperty('color',
-  function() {
-    return this.get(product.color);
-  },
-  function(val) {
+  color(val) {
     this.set(product.color, val);
     return this;
-  });
+  }
 
-defineProperty('depth',
-  function() {
-    return this.get(product.depth);
-  },
-  function(val) {
+  depth(val) {
     this.set(product.depth, val);
     return this;
-  });
+  }
 
-defineProperty('gtin12',
-  function() {
-    return this.get(product.gtin12);
-  },
-  function(val) {
+  gtin12(val) {
     this.set(product.gtin12, val);
     return this;
-  });
+  }
 
-defineProperty('gtin13',
-  function() {
-    return this.get(product.gtin13);
-  },
-  function(val) {
+  gtin13(val) {
     this.set(product.gtin13, val);
     return this;
-  });
+  }
 
-defineProperty('gtin14',
-  function() {
-    return this.get(product.gtin14);
-  },
-  function(val) {
+gtin14(val) {
     this.set(product.gtin14, val);
     return this;
-  });
+  }
 
-defineProperty('gtin8',
-  function() {
-    return this.get(product.gtin8);
-  },
-  function(val) {
+  gtin8(val) {
     this.set(product.gtin8, val);
     return this;
-  });
+  }
 
-defineProperty('isAccessoryOrSpacePartFor',
-  function() {
-    return this.get(product.isAccessoryOrSpacePartFor);
-  },
-  function(val) {
+  isAccessoryOrSpacePartFor(val) {
     this.set(product.isAccessoryOrSpacePartFor, val);
     return this;
-  });
+  }
 
-defineProperty('isConsumableFor',
-  function() {
-    return this.get(product.isConsumableFor);
-  },
-  function(val) {
+  isConsumableFor(val) {
     this.set(product.isConsumableFor, val);
     return this;
-  });
+  }
 
-defineProperty('isRelatedTo',
-  function() {
-    return this.get(product.isRelatedTo);
-  },
-  function(val) {
+  isRelatedTo(val) {
     this.set(product.isRelatedTo, val);
     return this;
-  });
+  }
 
-defineProperty('isSimilarTo',
-  function() {
-    return this.get(product.isSimilarTo);
-  },
-  function(val) {
+  isSimilarTo(val) {
     this.set(product.isSimilarTo, val);
     return this;
-  });
+  }
 
-defineProperty('itemCondition',
-  function() {
-    return this.get(product.itemCondition);
-  },
-  function(val) {
+  itemCondition(val) {
     this.set(product.itemCondition, val);
     return this;
-  });
+  }
 
-defineProperty('logo',
-  function() {
-    return this.get(product.logo);
-  },
-  function(val) {
+  logo(val) {
     this.set(product.logo, val);
     return this;
-  });
+  }
 
-defineProperty('manufacturer',
-  function() {
-    return this.get(product.manufacturer);
-  },
-  function(val) {
+  manufacturer(val) {
     this.set(product.manufacturer, val);
     return this;
-  });
+  }
 
-defineProperty('model',
-  function() {
-    return this.get(product.model);
-  },
-  function(val) {
+  model(val) {
     this.set(product.model, val);
     return this;
-  });
+  }
 
-defineProperty('mpn',
-  function() {
-    return this.get(product.mpn);
-  },
-  function(val) {
+  mpn(val) {
     this.set(product.mpn, val);
     return this;
-  });
+  }
 
-defineProperty('offers',
-  function() {
-    return this.get(product.offers);
-  },
-  function(val) {
+  offers(val) {
     this.set(product.offers, val);
     return this;
-  });
+  }
 
-defineProperty('productID',
-  function() {
-    return this.get(product.productID);
-  },
-  function(val) {
+  productID(val) {
     this.set(product.productID, val);
     return this;
-  });
+  }
 
-defineProperty('productionDate',
-  function() {
-    return this.get(product.productionDate);
-  },
-  function(val) {
+  productionDate(val) {
     this.set(product.productionDate, val);
     return this;
-  });
+  }
 
-defineProperty('purchaseDate',
-  function() {
-    return this.get(product.purchaseDate);
-  },
-  function(val) {
+  purchaseDate(val) {
     this.set(product.purchaseDate, val);
     return this;
-  });
+  }
 
-defineProperty('releaseDate',
-  function() {
-    return this.get(product.releaseDate);
-  },
-  function(val) {
+  releaseDate(val) {
     this.set(product.releaseDate, val);
     return this;
-  });
+  }
 
-defineProperty('review',
-  function() {
-    return this.get(product.review);
-  },
-  function(val) {
+  review(val) {
     this.set(product.review, val);
     return this;
-  });
+  }
 
-defineProperty('sku',
-  function() {
-    return this.get(product.sku);
-  },
-  function(val) {
+  sku(val) {
     this.set(product.sku, val);
     return this;
-  });
+  }
 
-defineProperty('weight',
-  function() {
-    return this.get(product.weight);
-  },
-  function(val) {
+  weight(val) {
     this.set(product.weight, val);
     return this;
-  });
+  }
+}
+Product.Builder = ProductBuilder;
+
+module.exports = Product;

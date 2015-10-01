@@ -14,7 +14,7 @@ describe('It should work', function() {
 
   it('should create a schema:Person', function(done) {
     var product = st.person().givenName('test').get();
-    assert.equal(product.givenName, 'test');
+    assert.equal(product.givenName.first, 'test');
     done();
   });
 
@@ -26,7 +26,7 @@ describe('It should work', function() {
          })
          .pipe(through.obj(function(chunk,encoding,callback) {
             assert(chunk instanceof st.Person);
-            assert.equal(chunk.givenName, 'test');
+            assert.equal(chunk.givenName.first, 'test');
             callback();
          }));
 
